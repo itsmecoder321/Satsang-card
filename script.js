@@ -1,6 +1,11 @@
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const fields = {
+        // New fields added
+        'eventTitle': 'preview-eventTitle',
+        'eventSubtitle': 'preview-eventSubtitle',
+        
         'startDate': 'preview-startDate',
         'startDay': 'preview-startDay',
         'startTime': 'preview-startTime',
@@ -44,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function downloadImage(type) {
         const cardElement = document.getElementById('invitation-card');
         
-        // Temporarily apply a class for black & white version if needed
         if (type === 'bw') {
             cardElement.classList.add('bw-export-prep');
         }
@@ -63,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
             useCORS: true,
             logging: false
         }).then(canvas => {
-            // Remove the temporary class *after* the canvas is created
             if (type === 'bw') {
                 cardElement.classList.remove('bw-export-prep');
             }
@@ -74,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const ctx = finalCanvas.getContext('2d');
             ctx.drawImage(canvas, 0, 0, finalCanvas.width, finalCanvas.height);
             
-            // Determine file type and data URL
             let dataUrl, fileName;
             if (type === 'bw') {
                 dataUrl = finalCanvas.toDataURL('image/jpeg', 0.95);
@@ -84,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 fileName = 'invitation_color.png';
             }
 
-            // Trigger download
             const link = document.createElement('a');
             link.href = dataUrl;
             link.download = fileName;
@@ -96,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 100);
 
         }).catch(err => {
-            // Always remove the class in case of an error
             if (type === 'bw') {
                 cardElement.classList.remove('bw-export-prep');
             }
@@ -105,5 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Initial update on page load
     updatePreview();
 });
