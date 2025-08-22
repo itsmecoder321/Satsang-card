@@ -64,16 +64,17 @@ body {
 .controls button:hover { background-color: #e67e00; }
 .preview-area {
     flex: 2;
-    min-width: 500px;
+    min-width: 300px; /* Adjusted for responsiveness */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .preview-area h2 { color: var(--text-color); }
 
-/* --- Card Styling --- */
+/* --- Responsive Card Styling --- */
 #invitation-card {
-    width: 500px;
+    width: 100%; /* Fills container */
+    max-width: 500px; /* But doesn't get too big */
     aspect-ratio: 5 / 7;
     background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
     padding: 30px;
@@ -98,11 +99,35 @@ body {
 .bw-export-prep {
     background: white !important;
     box-shadow: none !important;
-    border: 5px solid black !important; /* This line adds the border */
+    border: 5px solid black !important;
 }
 .bw-export-prep, .bw-export-prep * {
     color: black !important;
 }
 .bw-export-prep .footer {
     border-top: 1px solid black !important;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    .controls {
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+}
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    #invitation-card {
+        padding: 20px;
+        /* Adjust font sizes for very small screens */
+        font-size: 14px;
+    }
+    .event-title {
+        font-size: 1.8em;
+    }
 }
