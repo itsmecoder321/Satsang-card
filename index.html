@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation Card Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="controls">
+            <h1>Invitation Details 📝</h1>
+            <div class="form-group">
+                <label for="startDate">Start Date (e.g., 27-08-2025)</label>
+                <input type="text" id="startDate" value="27-08-2025">
+            </div>
+            <div class="form-group">
+                <label for="startDay">Start Day (e.g., बुधवार)</label>
+                <input type="text" id="startDay" value="बुधवार">
+            </div>
+            <div class="form-group">
+                <label for="startTime">Start Time (e.g., सुबह 08:00 बजे)</label>
+                <input type="text" id="startTime" value="सुबह 08:00 बजे">
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="endDate">End Date (e.g., 28-08-2025)</label>
+                <input type="text" id="endDate" value="28-08-2025">
+            </div>
+            <div class="form-group">
+                <label for="endDay">End Day (e.g., वीरवार)</label>
+                <input type="text" id="endDay" value="वीरवार">
+            </div>
+            <div class="form-group">
+                <label for="endTime">End Time (e.g., सुबह 08:00 बजे)</label>
+                <input type="text" id="endTime" value="सुबह 08:00 बजे">
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="venue">Venue / Address</label>
+                <textarea id="venue" rows="3">#501 Gali 01, New Pura, GT Road, Azad Gate, Rajasthan</textarea>
+            </div>
+            <div class="form-group">
+                <label for="inviter">Inviter(s) (निवेदक)</label>
+                <input type="text" id="inviter" value="Arora Family">
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact Number(s)</label>
+                <input type="text" id="contact" value="9477853944, 9473257743">
+            </div>
+            <button id="downloadColorBtn">Download Color Image (PNG) 🖼️</button>
+            <button id="downloadBwBtn">Download Black & White ⚫⚪</button>
+        </div>
+
+        <div class="preview-area">
+            <h2>Live Preview</h2>
+            <div id="invitation-card">
+                <p class="blessing">सर्व शक्तिमते परमात्मने श्री रामाय नमः</p>
+                <p class="blessing-names">परम पूजनीय ब्रह्मलीन स्वामी सत्यानंद जी महाराज एवं परम पूजनीय ब्रह्मलीन भक्त हंसराज जी महाराज के शुभ आशीर्वाद से</p>
+                <h2 class="event-title">24 घंटे का अखंड जाप</h2>
+                <p class="event-subtitle">(प्रार्थना जप यज्ञ)</p>
+                <div class="details">
+                    <p>आरम्भ जाप दिनांक <span id="preview-startDate">27-08-2025</span> दिन <span id="preview-startDay">बुधवार</span></p>
+                    <p>समय <span id="preview-startTime">सुबह 08:00 बजे</span></p>
+                    <p>पूर्ति जाप दिनांक <span id="preview-endDate">28-08-2025</span> दिन <span id="preview-endDay">वीरवार</span></p>
+                    <p>समय <span id="preview-endTime">सुबह 08:00 बजे</span></p>
+                </div>
+                <div class="venue-section">
+                    <p>स्थान :- <span id="preview-venue">#501 Gali 01, New Pura, GT Road, Azad Gate, Rajasthan</span></p>
+                </div>
+                <div class="footer">
+                    <p>निवेदक :- <span id="preview-inviter">Arora Family</span></p>
+                    <p>Contact: <span id="preview-contact">9477853944, 9473257743</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
