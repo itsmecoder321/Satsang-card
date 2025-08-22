@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -15,6 +16,17 @@
     <div class="container">
         <div class="controls">
             <h1>Invitation Details 📝</h1>
+            
+            <div class="form-group">
+                <label for="eventTitle">Event Title</label>
+                <input type="text" id="eventTitle" value="24 घंटे का अखंड जाप">
+            </div>
+            <div class="form-group">
+                <label for="eventSubtitle">Event Subtitle</label>
+                <input type="text" id="eventSubtitle" value="(प्रार्थना जप यज्ञ)">
+            </div>
+            <hr>
+            
             <div class="form-group">
                 <label for="startDate">Start Date (e.g., 27-08-2025)</label>
                 <input type="text" id="startDate" value="27-08-2025">
@@ -62,8 +74,10 @@
             <div id="invitation-card">
                 <p class="blessing">सर्व शक्तिमते परमात्मने श्री रामाय नमः</p>
                 <p class="blessing-names">परम पूजनीय ब्रह्मलीन स्वामी सत्यानंद जी महाराज एवं परम पूजनीय ब्रह्मलीन भक्त हंसराज जी महाराज के शुभ आशीर्वाद से</p>
-                <h2 class="event-title">24 घंटे का अखंड जाप</h2>
-                <p class="event-subtitle">(प्रार्थना जप यज्ञ)</p>
+                
+                <h2 class="event-title" id="preview-eventTitle">24 घंटे का अखंड जाप</h2>
+                <p class="event-subtitle" id="preview-eventSubtitle">(प्रार्थना जप यज्ञ)</p>
+                
                 <div class="details">
                     <p>आरम्भ जाप दिनांक <span id="preview-startDate">27-08-2025</span> दिन <span id="preview-startDay">बुधवार</span></p>
                     <p>समय <span id="preview-startTime">सुबह 08:00 बजे</span></p>
@@ -85,3 +99,4 @@
 
 </body>
 </html>
+
