@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -16,6 +15,15 @@
     <div class="container">
         <div class="controls">
             <h1>Invitation Details 📝</h1>
+            <div class="form-group">
+    <label for="blessingTop">Top Blessing Line</label>
+    <textarea id="blessingTop" rows="2">सर्व शक्तिमते परमात्मने श्री रामाय नमः</textarea>
+</div>
+<div class="form-group">
+    <label for="blessingNames">Main Blessing / By</label>
+    <textarea id="blessingNames" rows="4">परम पूजनीय ब्रह्मलीन स्वामी सत्यानंद जी महाराज एवं परम पूजनीय ब्रह्मलीन भक्त हंसराज जी महाराज के शुभ आशीर्वाद से</textarea>
+</div>
+<hr>
             
             <div class="form-group">
                 <label for="eventTitle">Event Title</label>
@@ -27,6 +35,10 @@
             </div>
             <hr>
             
+            <div class="form-group">
+                <label for="startLabel">Start Details Label</label>
+                <input type="text" id="startLabel" value="आरम्भ जाप दिनांक">
+            </div>
             <div class="form-group">
                 <label for="startDate">Start Date (e.g., 27-08-2025)</label>
                 <input type="text" id="startDate" value="27-08-2025">
@@ -40,6 +52,11 @@
                 <input type="text" id="startTime" value="सुबह 08:00 बजे">
             </div>
             <hr>
+
+            <div class="form-group">
+                <label for="endLabel">End Details Label</label>
+                <input type="text" id="endLabel" value="पूर्ति जाप दिनांक">
+            </div>
             <div class="form-group">
                 <label for="endDate">End Date (e.g., 28-08-2025)</label>
                 <input type="text" id="endDate" value="28-08-2025">
@@ -53,18 +70,34 @@
                 <input type="text" id="endTime" value="सुबह 08:00 बजे">
             </div>
             <hr>
+
+            <div class="form-group">
+                <label for="venueLabel">Venue Label</label>
+                <input type="text" id="venueLabel" value="स्थान :-">
+            </div>
             <div class="form-group">
                 <label for="venue">Venue / Address</label>
                 <textarea id="venue" rows="3">#501 Gali 01, New Pura, GT Road, Azad Gate, Rajasthan</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="inviterLabel">Inviter Label</label>
+                <input type="text" id="inviterLabel" value="निवेदक :-">
             </div>
             <div class="form-group">
                 <label for="inviter">Inviter(s) (निवेदक)</label>
                 <input type="text" id="inviter" value="Arora Family">
             </div>
+            
+            <div class="form-group">
+                <label for="contactLabel">Contact Label</label>
+                <input type="text" id="contactLabel" value="Contact:">
+            </div>
             <div class="form-group">
                 <label for="contact">Contact Number(s)</label>
                 <input type="text" id="contact" value="9477853944, 9473257743">
             </div>
+
             <button id="downloadColorBtn">Download Color Image (PNG) 🖼️</button>
             <button id="downloadBwBtn">Download Black & White ⚫⚪</button>
         </div>
@@ -72,24 +105,26 @@
         <div class="preview-area">
             <h2>Live Preview</h2>
             <div id="invitation-card">
-                <p class="blessing">सर्व शक्तिमते परमात्मने श्री रामाय नमः</p>
-                <p class="blessing-names">परम पूजनीय ब्रह्मलीन स्वामी सत्यानंद जी महाराज एवं परम पूजनीय ब्रह्मलीन भक्त हंसराज जी महाराज के शुभ आशीर्वाद से</p>
-                
+                <p class="blessing" id="preview-blessingTop">सर्व शक्तिमते परमात्मने श्री रामाय नमः</p>
+<p class="blessing-names" id="preview-blessingNames">परम पूजनीय ब्रह्मलीन स्वामी सत्यानंद जी महाराज एवं परम पूजनीय ब्रह्मलीन भक्त हंसराज जी महाराज के शुभ आशीर्वाद से</p>
+                       
                 <h2 class="event-title" id="preview-eventTitle">24 घंटे का अखंड जाप</h2>
                 <p class="event-subtitle" id="preview-eventSubtitle">(प्रार्थना जप यज्ञ)</p>
                 
                 <div class="details">
-                    <p>आरम्भ जाप दिनांक <span id="preview-startDate">27-08-2025</span> दिन <span id="preview-startDay">बुधवार</span></p>
-                    <p>समय <span id="preview-startTime">सुबह 08:00 बजे</span></p>
-                    <p>पूर्ति जाप दिनांक <span id="preview-endDate">28-08-2025</span> दिन <span id="preview-endDay">वीरवार</span></p>
-                    <p>समय <span id="preview-endTime">सुबह 08:00 बजे</span></p>
+                    <p><span id="preview-startLabel">आरम्भ जाप दिनांक</span> <span id="preview-startDate">27-08-2025</span><span id="preview-startDay">बुधवार</span></p>
+                    <p><span id="preview-startTime">सुबह 08:00 बजे</span></p>
+                    <p><span id="preview-endLabel">पूर्ति जाप दिनांक</span> <span id="preview-endDate">28-08-2025</span><span id="preview-endDay">वीरवार</span></p>
+                    <p><span id="preview-endTime">सुबह 08:00 बजे</span></p>
                 </div>
+                
                 <div class="venue-section">
-                    <p>स्थान :- <span id="preview-venue">#501 Gali 01, New Pura, GT Road, Azad Gate, Rajasthan</span></p>
+                    <p><span id="preview-venueLabel">स्थान :-</span> <span id="preview-venue">#501 Gali 01, New Pura, GT Road, Azad Gate, Rajasthan</span></p>
                 </div>
+
                 <div class="footer">
-                    <p>निवेदक :- <span id="preview-inviter">Arora Family</span></p>
-                    <p>Contact: <span id="preview-contact">9477853944, 9473257743</span></p>
+                    <p><span id="preview-inviterLabel">निवेदक :-</span> <span id="preview-inviter">Arora Family</span></p>
+                    <p><span id="preview-contactLabel">Contact:</span> <span id="preview-contact">9477853944, 9473257743</span></p>
                 </div>
             </div>
         </div>
@@ -99,4 +134,3 @@
 
 </body>
 </html>
-
