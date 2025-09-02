@@ -1,21 +1,27 @@
-
 document.addEventListener('DOMContentLoaded', () => {
+const fields = {
+    // --- NEWLY ADDED FIELDS ---
+    'blessingTop': 'preview-blessingTop',
+    'blessingNames': 'preview-blessingNames',
 
-    const fields = {
-        // New fields added
-        'eventTitle': 'preview-eventTitle',
-        'eventSubtitle': 'preview-eventSubtitle',
-        
-        'startDate': 'preview-startDate',
-        'startDay': 'preview-startDay',
-        'startTime': 'preview-startTime',
-        'endDate': 'preview-endDate',
-        'endDay': 'preview-endDay',
-        'endTime': 'preview-endTime',
-        'venue': 'preview-venue',
-        'inviter': 'preview-inviter',
-        'contact': 'preview-contact'
-    };
+    // Existing fields
+    'eventTitle': 'preview-eventTitle',
+    'eventSubtitle': 'preview-eventSubtitle',
+    'startDate': 'preview-startDate',
+    'startDay': 'preview-startDay',
+    'startTime': 'preview-startTime',
+    'endDate': 'preview-endDate',
+    'endDay': 'preview-endDay',
+    'endTime': 'preview-endTime',
+    'venue': 'preview-venue',
+    'inviter': 'preview-inviter',
+    'contact': 'preview-contact',
+    'startLabel': 'preview-startLabel',
+    'endLabel': 'preview-endLabel',
+    'venueLabel': 'preview-venueLabel',
+    'inviterLabel': 'preview-inviterLabel',
+    'contactLabel': 'preview-contactLabel'
+};
 
     function updatePreview() {
         for (const [inputId, previewId] of Object.entries(fields)) {
